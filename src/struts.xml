@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="action" extends="struts-default">
+		<action name="myregist" class="com.action.UserAction" method="regist">
+			<result name="success" type="redirect">/personalCenter.jsp</result>
+			<result name="fail" type="redirect">/fail.jsp</result>
+			<result name="input"  type="redirect">/regist.jsp</result>
+		</action>
+		<action name="myquit" class="com.action.UserAction" method="quit">
+			<result name="success" type="redirect">/index-3.jsp</result>
+		</action>
+		<action name="mylogin" class="com.action.UserAction" method="login">
+			<result name="user" type="redirect">/personalCenter.jsp</result>
+			<result name="admin" type="redirect">/adminCenter.jsp</result>
+			<result name="input" type="redirect">/index-3.jsp</result>
+		</action>
+		<action name="changeUser" class="com.action.UserAction" method="changeUser">
+			<result name="success" type="redirect">/adminCenter.jsp</result>
+			<result name="fail" type="redirect">/adminCenter.jsp</result>
+		</action>
+		<action name="deleteUser" class="com.action.UserAction" method="deleteUser">
+			<result name="success" type="redirect">/adminCenter.jsp</result>
+			<result name="fail" type="redirect">/adminCenter.jsp</result>
+		</action>
+		<action name="refresh" class="com.action.UserAction" method="refresh">
+			<result name="success" type="redirect">/personalCenter.jsp</result>
+			<result name="fail" type="redirect">/index-3.jsp</result>
+		</action>
+		<action name="listProducts" class="com.action.UserAction" method="listProducts">
+			<result name="success" type="redirect">/index-1.jsp</result>
+			<result name="fail" type="redirect">/index-3.jsp</result>
+		</action>
+		<action name="productDetails" class="com.action.ProductAction" method="productDetails">
+			<result name="success" >/displayProduct.jsp</result>
+			<result name="fail" type="redirect">/index-1.jsp</result>
+		</action>
+		<action name="publishProduct" class="com.action.ProductAction" method="publishProduct">
+			<result name="success" type="redirect">/personalCenter.jsp</result>
+			<result name="fail" type="redirect">/soldProduct.jsp</result>
+		</action>
+		<action name="buyProduct" class="com.action.ProductAction" method="buyProduct">
+			<result name="success" type="redirect">/personalCenter.jsp</result>
+			<result name="nologin" type="redirect">/index-3.jsp</result>
+			<result name="fail" type="redirect">/error.jsp</result>
+		</action>
+		<action name="removeProduct" class="com.action.ProductAction" method="removeProduct">
+			<result name="success" type="redirect">/personalCenter.jsp</result>
+			<result name="nologin" type="redirect">/index-3.jsp</result>
+			<result name="fail" type="redirect">/error.jsp</result>
+		</action>
+	</package>
+</struts>    
